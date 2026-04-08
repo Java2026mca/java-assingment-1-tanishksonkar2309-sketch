@@ -16,6 +16,31 @@ public class Main {
         // 1 2 1
         // 1 3 3 1
         // 1 4 6 4 1
+public class PascalsTriangle {
+    public static void main(String[] args) {
+        int n = 5; // Example input
+        printPascalsTriangle(n);
+    }
 
+    public static void printPascalsTriangle(int n) {
+        for (int i = 0; i < n; i++) {
+            int number = 1;
+            for (int j = 0; j <= i; j++) {
+                // Print the current number
+                System.out.print(number);
+                
+                // Print a space only if it is not the last element in the row
+                if (j < i) {
+                    System.out.print(" ");
+                }
+                
+                // Calculate the next number in the row using the binomial coefficient property:
+                // C(n, k) = C(n, k-1) * (n - k + 1) / k
+                number = number * (i - j) / (j + 1);
+            }
+            // Move to the next line after each row
+            System.out.println();
+        }
+        
     }
 }
