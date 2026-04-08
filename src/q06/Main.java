@@ -10,6 +10,19 @@ public class Main {
         //
         // Input: 8
         // Output: 0 1 1 2 3 5 8 13
+int first = 0, second = 1;
 
+        System.out.print("First " + n + " Fibonacci numbers: ");
+        
+        for (int i = 0; i < n; i++) {
+            if (i <= 1) {
+                System.out.print(i + " ");
+            } else {
+                int next = first + second;
+                System.out.print(next + " ");
+                first = second;
+                second = next;
+            }
+        }
     }
 }
