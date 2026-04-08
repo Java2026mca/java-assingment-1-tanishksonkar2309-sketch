@@ -17,6 +17,38 @@ public class Main {
         // Output:
         // 12 22 25 34 64
         // Swaps: 7
-
+if (!sc.hasNextInt()) return;
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        
+        // Read integers into array
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        
+        // Manually implement Bubble Sort
+        int totalSwaps = 0;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    // Swap elements
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                    totalSwaps++;
+                }
+            }
+        }
+        
+        // Print sorted array
+        for (int i = 0; i < n; i++) {
+            System.out.print(arr[i] + (i == n - 1 ? "" : " "));
+        }
+        System.out.println();
+        
+        // Print total swaps
+        System.out.println("Swaps: " + totalSwaps);
+        
+        sc.close();
     }
 }
