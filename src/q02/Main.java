@@ -16,13 +16,26 @@ public class Main {
         // 1 2 1
         // 1 3 3 1
         // 1 4 6 4 1
-public class PascalsTriangle {
-    public static void main(String[] args) {
-        int n = 5; // Example input
-        printPascalsTriangle(n);
-    }
+        for (int i = 0; i < n; i++) {
+            int number = 1;
+            for (int j = 0; j <= i; j++) {
+                System.out.print(number);
+                // Calculate next number using Binomial Coefficient property: 
+                // nCr = (nCr-1 * (n - r)) / r
+                number = number * (i - j) / (j + 1);
+                
+                // Add space only if it's not the last element in the row
+                if (j < i) {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+        sc.close();
 
-    public static void printPascalsTriangle(int n) {
+    }
+}
+   /* public static void printPascalsTriangle(int n) {
         for (int i = 0; i < n; i++) {
             int number = 1;
             for (int j = 0; j <= i; j++) {
@@ -42,5 +55,5 @@ public class PascalsTriangle {
             System.out.println();
         }
         
-    }
+    }*/
 }
