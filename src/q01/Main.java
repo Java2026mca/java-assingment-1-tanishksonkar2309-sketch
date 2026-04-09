@@ -4,7 +4,7 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-
+    }
         // TODO: Print a hollow diamond pattern of half-height n using '*'
         //
         // Rules:
@@ -24,7 +24,8 @@ public class Main {
     // Upper half and middle
     for (int i = 0; i < n; i++) {
         // Leading spaces
-        for (int j = 0; j < n - i - 1; j++) System.out.print(" ");
+        for (int j = 0; j < n - i - 1; j++) {
+            System.out.print(" ");
         
         System.out.print("*");
         
@@ -35,11 +36,12 @@ public class Main {
         }
         System.out.println();
     }
-
+    }
     // Lower half
     for (int i = n - 2; i >= 0; i--) {
         // Leading spaces
-        for (int j = 0; j < n - i - 1; j++) System.out.print(" ");
+        for (int j = 0; j < n - i - 1; j++) {
+            System.out.print(" ");
         
         System.out.print("*");
         
@@ -51,3 +53,6 @@ public class Main {
         System.out.println();
     }
 }
+
+
+    }
