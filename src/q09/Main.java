@@ -19,6 +19,41 @@ public class Main {
         // Output:
         // 19 22
         // 43 50
+int[][] A = new int[n][n];
+        int[][] B = new int[n][n];
+        int[][] C = new int[n][n];
 
+        // Read Matrix A row by row
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                A[i][j] = sc.nextInt();
+            }
+        }
+
+        // Read Matrix B row by row
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                B[i][j] = sc.nextInt();
+            }
+        }
+
+        // Perform Multiplication C = A x B
+        for (int i = 0; i < n; i++) { // rows of A
+            for (int j = 0; j < n; j++) { // columns of B
+                for (int k = 0; k < n; k++) { // dot product
+                    C[i][j] += A[i][k] * B[k][j];
+                }
+            }
+        }
+
+        // Print Result Matrix C row by row
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(C[i][j] + (j == n - 1 ? "" : " "));
+            }
+            System.out.println();
+        }
+        
+        sc.close();
     }
 }
